@@ -61,7 +61,7 @@ function Login() {
           <Head>
             <title>Log In | Welkom U</title>
           </Head>
-          <div className="col-span-1 h-full bg-primary flex justify-center align-center px-5">
+          <div className="col-span-1 h-full bg-primary flex justify-center align-center px-5 smallTablet:hidden">
             <div className="">
               <img src="/images/welkom-logo.png" className="mb-20 mt-10" />
               <p className="text-5xl font-bold max-w-md text-white opacity-70">
@@ -69,9 +69,9 @@ function Login() {
               </p>
             </div>
           </div>
-          <div className="col-span-2 h-full flex justify-center align-center bg-blue-50 px-5">
+          <div className="col-span-2 h-full flex justify-center align-center bg-blue-50 px-5 py-16 smallTablet:col-span-3">
             <form
-              className="mx-auto my-auto max-w-3xl"
+              className="mx-auto my-auto w-full max-w-md"
               onSubmit={(e) => {
                 e.preventDefault();
                 onSubmit();
@@ -83,7 +83,7 @@ function Login() {
                   Email address
                 </label>
                 <input
-                  className="border-2 border-grey-500 bg-blue-50 p-5 w-102 rounded-lg"
+                  className="border-2 border-grey-500 bg-blue-50 p-5 w-full rounded-lg"
                   type="email"
                   required
                   value={email}
@@ -95,23 +95,23 @@ function Login() {
                   Password
                 </label>
                 <input
-                  className="border-2 border-grey-500 bg-blue-50 p-5 w-102 rounded-lg"
+                  className="border-2 border-grey-500 bg-blue-50 p-5 w-full rounded-lg"
                   type="password"
                   required
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                 />
               </div>
-              <p className="text-primary mb-10">Forgot password?</p>
+              <p className="text-primary mb-10 text-lg">Forgot password?</p>
               <button
-                className="w-full flex justify-between bg-primary rounded p-5 mb-10 text-white"
+                className="w-full flex justify-between bg-primary rounded p-5 mb-10 text-white text-lg"
                 disabled={submitting}
                 type="submit"
               >
                 <span className="font-semibold">{submitting ? 'Logging In...' : 'Sign In'}</span>
                 <span className="font-bold">&gt;</span>
               </button>
-              <p>
+              <p className="text-lg">
                 Don't have and account?{' '}
                 <a href="/#" className="ml-1 text-primary">
                   Sign up now
