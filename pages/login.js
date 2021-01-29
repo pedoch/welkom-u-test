@@ -45,7 +45,7 @@ function Login() {
         setSubmitting(false);
       }
     } catch (error) {
-      console.log(error);
+      setSubmitting(false);
     } finally {
     }
   };
