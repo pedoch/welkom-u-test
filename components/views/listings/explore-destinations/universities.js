@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { Spinner } from 'evergreen-ui';
+import { ChevronLeftIcon, Spinner } from 'evergreen-ui';
 import { useContext, useEffect, useState } from 'react';
 import Context from '../../../../store/context';
 
@@ -37,14 +37,15 @@ function Universities({ setExploreView, province, city }) {
     <div className="w-full px-10">
       <p
         onClick={() => setExploreView('default')}
-        className="ml-2 font-semibold text-gray-400 mt-5 cursor-pointer"
+        className="ml-2 font-semibold text-gray-400 mt-5 cursor-pointer flex items-center"
       >
-        &lt;&nbsp;Back
+        <ChevronLeftIcon />
+        &nbsp;Back
       </p>
       <div className="w-full mx-auto mt-10 max-w-5xl">
         <p className="text-xl font-semibold mb-5">Universities</p>
         {universitiesLoading ? (
-          <span className="w-full flex justify-center">
+          <span className="w-full flex justify-center mt-20">
             <Spinner size={40} />
           </span>
         ) : universities.length < 1 ? (
