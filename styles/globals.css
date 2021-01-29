@@ -19,11 +19,6 @@ a {
   box-sizing: border-box;
 }
 
-.slick-slide {
-  height: auto;
-}
-
-.slick-arrow {
-  background-color: black;
-  border-radius: 10px;
+button {
+  outline: none;
 }
