@@ -1,6 +1,8 @@
 import axios from 'axios';
 import {
   AirplaneIcon,
+  ChevronLeftIcon,
+  ChevronRightIcon,
   ControlIcon,
   CrownIcon,
   Dialog,
@@ -10,8 +12,8 @@ import {
   PeopleIcon,
 } from 'evergreen-ui';
 import { useContext, useEffect, useState } from 'react';
-import Slider from 'react-slick';
 import Context from '../../../../store/context';
+import Carousel, { Slide } from '../../../primitives/Carousel';
 
 function ExploreDefault({ setView, setExploreView, setProvince, setCity, city, province }) {
   const [isShown, setIsShown] = useState(false);
@@ -72,32 +74,45 @@ function ExploreDefault({ setView, setExploreView, setProvince, setCity, city, p
     <div className="w-full px-10">
       <p
         onClick={() => setView('default')}
-        className="ml-2 font-semibold text-gray-400 mt-5 cursor-pointer"
+        className="ml-2 font-semibold text-gray-400 mt-5 cursor-pointer flex items-center"
       >
-        &lt;&nbsp;Back
+        <ChevronLeftIcon />
+        &nbsp;Back
       </p>
       <div className="w-full max-w-7xl mx-auto mt-10">
         <p className="text-xl font-semibold mb-5">Explore Destinations</p>
-        <Slider {...settings} className="text-black">
-          <div className="mx-1">
-            <img className="w-72 h-72" src="/images/city.jpg" />
-          </div>
-          <div className="mx-1">
-            <img className="w-72 h-72" src="/images/canada.jpg" />
-          </div>
-          <div className="mx-1">
-            <img className="w-72 h-72" src="/images/city.jpg" />
-          </div>
-          <div className="mx-1">
-            <img className="w-72 h-72" src="/images/canada.jpg" />
-          </div>
-          <div className="mx-1">
-            <img className="w-72 h-72" src="/images/city.jpg" />
-          </div>
-          <div className="mx-1">
-            <img className="w-72 h-72" src="/images/canada.jpg" />
-          </div>
-        </Slider>
+        <Carousel size={4}>
+          <Slide size={4}>
+            <div className="h-auto flex min-h-full mx-2">
+              <img className="w-full min-h-full outline-none" src="/images/canada.jpg" />
+            </div>
+          </Slide>
+          <Slide size={4}>
+            <div className="h-auto flex min-h-full mx-2">
+              <img className="w-full min-h-full outline-none" src="/images/city.jpg" />
+            </div>
+          </Slide>
+          <Slide size={4}>
+            <div className="h-auto flex min-h-full mx-2">
+              <img className="w-full min-h-full outline-none" src="/images/canada.jpg" />
+            </div>
+          </Slide>
+          <Slide size={4}>
+            <div className="h-auto flex min-h-full mx-2">
+              <img className="w-full min-h-full outline-none" src="/images/city.jpg" />
+            </div>
+          </Slide>
+          <Slide size={4}>
+            <div className="h-auto flex min-h-full mx-2">
+              <img className="w-full min-h-full outline-none" src="/images/canada.jpg" />
+            </div>
+          </Slide>
+          <Slide size={4}>
+            <div className="h-auto flex min-h-full mx-2">
+              <img className="w-full min-h-full outline-none" src="/images/city.jpg" />
+            </div>
+          </Slide>
+        </Carousel>
       </div>
       <div className="w-full max-w-7xl mx-auto mt-10 flex justify-between">
         <div>
@@ -153,7 +168,7 @@ function ExploreDefault({ setView, setExploreView, setProvince, setCity, city, p
             </div>
           </div>
         </div>
-        <div>
+        <div cl>
           <div className="flex justify-between mb-5">
             <div className="text-gray-400">
               <p className="text-md text-black font-semibold">
@@ -240,68 +255,70 @@ function ExploreDefault({ setView, setExploreView, setProvince, setCity, city, p
               Change Location
             </button>
           </div>
-          <div
-            className="w-full flex justify-between items-center shadow p-3 rounded text-sm text-gray-400 mb-3 border border-gray-100 cursor-pointer hover:bg-yellow-50"
-            onClick={() => setExploreView('universities')}
-          >
-            <div className="flex items-center">
-              <ControlIcon size={20} className="mr-4" />
-              <div className="mr-2">
-                <p className="font-semibold">Universities</p>
-                <p className="">Explore your universities</p>
+          <div className="w-min ml-auto">
+            <div
+              className="flex justify-between items-center min-w-min shadow p-3 rounded text-sm text-gray-400 mb-3 border border-gray-100 cursor-pointer hover:bg-yellow-50"
+              onClick={() => setExploreView('universities')}
+            >
+              <div className="flex items-center">
+                <ControlIcon size={20} className="mr-4" />
+                <div className="mr-6">
+                  <p className="font-semibold whitespace-nowrap">Universities</p>
+                  <p className="whitespace-nowrap">Explore your universities</p>
+                </div>
               </div>
+              <ChevronRightIcon />
             </div>
-            <span>&gt;</span>
-          </div>
-          <div className="w-full flex justify-between items-center shadow p-3 rounded text-sm text-gray-400 mb-3 border border-gray-100 cursor-pointer hover:bg-yellow-50">
-            <div className="flex items-center">
-              <ManualIcon size={20} className="mr-4" />
-              <div className="mr-2">
-                <p className="font-semibold">Colleges</p>
-                <p className="">Find top colleges</p>
+            <div className="flex justify-between items-center min-w-min shadow p-3 rounded text-sm text-gray-400 mb-3 border border-gray-100 cursor-pointer hover:bg-yellow-50">
+              <div className="flex items-center">
+                <ManualIcon size={20} className="mr-4" />
+                <div className="mr-6">
+                  <p className="font-semibold whitespace-nowrap">Colleges</p>
+                  <p className="whitespace-nowrap">Find top colleges</p>
+                </div>
               </div>
+              <ChevronRightIcon />
             </div>
-            <span>&gt;</span>
-          </div>
-          <div className="w-full flex justify-between items-center shadow p-3 rounded text-sm text-gray-400 mb-3 border border-gray-100 cursor-pointer hover:bg-yellow-50">
-            <div className="flex items-center">
-              <PeopleIcon size={20} className="mr-4" />
-              <div className="mr-2">
-                <p className="font-semibold">First Friend</p>
-                <p className="">Help on arrival</p>
+            <div className="flex justify-between items-center min-w-min shadow p-3 rounded text-sm text-gray-400 mb-3 border border-gray-100 cursor-pointer hover:bg-yellow-50">
+              <div className="flex items-center">
+                <PeopleIcon size={20} className="mr-4" />
+                <div className="mr-6">
+                  <p className="font-semibold whitespace-nowrap">First Friend</p>
+                  <p className="whitespace-nowrap">Help on arrival</p>
+                </div>
               </div>
+              <ChevronRightIcon />
             </div>
-            <span>&gt;</span>
-          </div>
-          <div className="w-full flex justify-between items-center shadow p-3 rounded text-sm text-gray-400 mb-3 border border-gray-100 cursor-pointer hover:bg-yellow-50">
-            <div className="flex items-center">
-              <AirplaneIcon size={20} className="mr-4" />
-              <div className="mr-2">
-                <p className="font-semibold">Airport Pickup</p>
-                <p className="">Book a ride</p>
+            <div className="flex justify-between items-center min-w-min shadow p-3 rounded text-sm text-gray-400 mb-3 border border-gray-100 cursor-pointer hover:bg-yellow-50">
+              <div className="flex items-center">
+                <AirplaneIcon size={20} className="mr-4" />
+                <div className="mr-6">
+                  <p className="font-semibold whitespace-nowrap">Airport Pickup</p>
+                  <p className="whitespace-nowrap">Book a ride</p>
+                </div>
               </div>
+              <ChevronRightIcon />
             </div>
-            <span>&gt;</span>
-          </div>
-          <div className="w-full flex justify-between items-center shadow p-3 rounded text-sm text-gray-400 mb-3 border border-gray-100 cursor-pointer hover:bg-yellow-50">
-            <div className="flex items-center">
-              <FlameIcon size={20} className="mr-4" />
-              <div className="mr-2">
-                <p className="font-semibold">Food</p>
-                <p className="">Satisfy your taste buds</p>
+            <div className="flex justify-between items-center min-w-min shadow p-3 rounded text-sm text-gray-400 mb-3 border border-gray-100 cursor-pointer hover:bg-yellow-50">
+              <div className="flex items-center">
+                <FlameIcon size={20} className="mr-4" />
+                <div className="mr-6">
+                  <p className="font-semibold whitespace-nowrap">Food</p>
+                  <p className="whitespace-nowrap">Satisfy your taste buds</p>
+                </div>
               </div>
+              <ChevronRightIcon />
             </div>
-            <span>&gt;</span>
-          </div>
-          <div className="w-full flex justify-between items-center shadow p-3 rounded text-sm text-gray-400 mb-3 border border-gray-100 cursor-pointer hover:bg-yellow-50">
-            <div className="flex items-center">
-              <CrownIcon size={20} className="mr-4" />
-              <div className="mr-2">
-                <p className="font-semibold">Top Activities</p>
-                <p className="">Must do</p>
+            <div className="flex justify-between items-center min-w-min shadow p-3 rounded text-sm text-gray-400 mb-3 border border-gray-100 cursor-pointer hover:bg-yellow-50">
+              <div className="flex items-center">
+                <CrownIcon size={20} className="mr-4" />
+                <div className="mr-6">
+                  <p className="font-semibold whitespace-nowrap">Top Activities</p>
+                  <p className="whitespace-nowrap">Must do</p>
+                </div>
               </div>
+              <ChevronRightIcon />
             </div>
-            <span>&gt;</span>
           </div>
         </div>
       </div>
