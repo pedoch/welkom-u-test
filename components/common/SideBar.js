@@ -16,7 +16,7 @@ function SideBar() {
 
   const { user, page } = state;
   return (
-    <div className="absolute left-0 h-screen w-72 px-5 pt-20 bg-gray-100">
+    <div className="absolute left-0 h-screen w-72 px-5 pt-10 bg-gray-100">
       <div className="flex items-center mb-10">
         <Avatar
           isSolid
@@ -29,7 +29,7 @@ function SideBar() {
       </div>
       <ul className="list-none">
         <li
-          className={`px-5 py-4 font-semibold flex items-center hover:bg-yellow-200 cursor-pointer mb-3 ${
+          className={`px-5 py-4 font-semibold flex items-center hover:bg-yellow-200 cursor-pointer mb-2 ${
             page === 1 && 'bg-yellow-100 text-primary'
           }`}
           onClick={() => {
@@ -40,7 +40,7 @@ function SideBar() {
           My Listsings
         </li>
         <li
-          className={`px-5 py-4 font-semibold flex items-center hover:bg-yellow-200 cursor-pointer mb-3 ${
+          className={`px-5 py-4 font-semibold flex items-center hover:bg-yellow-200 cursor-pointer mb-2 ${
             page === 2 && 'bg-yellow-100 text-primary'
           }`}
           onClick={() => {
@@ -51,7 +51,7 @@ function SideBar() {
           Accomodation Interest
         </li>
         <li
-          className={`px-5 py-4 font-semibold flex items-center hover:bg-yellow-200 cursor-pointer mb-3 ${
+          className={`px-5 py-4 font-semibold flex items-center hover:bg-yellow-200 cursor-pointer mb-2 ${
             page === 3 && 'bg-yellow-100 text-primary'
           }`}
           onClick={() => {
@@ -62,7 +62,7 @@ function SideBar() {
           Transactions
         </li>
         <li
-          className={`px-5 py-4 font-semibold flex items-center hover:bg-yellow-200 cursor-pointer mb-3 ${
+          className={`px-5 py-4 font-semibold flex items-center hover:bg-yellow-200 cursor-pointer mb-2 ${
             page === 4 && 'bg-yellow-100 text-primary'
           }`}
           onClick={() => {
@@ -73,7 +73,7 @@ function SideBar() {
           Profile
         </li>
         <li
-          className={`px-5 py-4 font-semibold flex items-center hover:bg-yellow-200 cursor-pointer mb-3 ${
+          className={`px-5 py-4 font-semibold flex items-center hover:bg-yellow-200 cursor-pointer mb-2 ${
             page === 5 && 'bg-yellow-100 text-primary'
           }`}
           onClick={() => {
@@ -84,7 +84,7 @@ function SideBar() {
           Settings
         </li>
         <li
-          className={`px-5 py-4 font-semibold flex items-center hover:bg-yellow-200 cursor-pointer mb-3 ${
+          className={`px-5 py-4 font-semibold flex items-center hover:bg-yellow-200 cursor-pointer mb-2 ${
             page === 6 && 'bg-yellow-100 text-primary'
           }`}
           onClick={() => {
@@ -95,7 +95,7 @@ function SideBar() {
           Notifications
         </li>
         <li
-          className={`px-5 py-4 font-semibold flex items-center hover:bg-yellow-200 cursor-pointer mb-3 ${
+          className={`px-5 py-4 font-semibold flex items-center hover:bg-yellow-200 cursor-pointer mb-2 ${
             page === 7 && 'bg-yellow-100 text-primary'
           }`}
           onClick={() => {
