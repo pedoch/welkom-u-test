@@ -6,7 +6,7 @@ function Listings() {
   const [view, setView] = useState('default');
 
   return (
-    <div className="w-full h-full overflow-y-auto">
+    <div className="w-full h-full">
       {view === 'default' ? (
         <Default setView={setView} />
       ) : view === 'Explore your Destination' ? (

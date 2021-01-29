@@ -30,7 +30,7 @@ export default function Home() {
           />
         </Head>
 
-        <div className="w-full h-screen overflow-hidden">
+        <div className="w-full h-screen overflow-x-hidden">
           {page === 1 ? <Listings /> : page === 4 ? <Profile /> : <Listings />}
         </div>
       </AppLayout>
