@@ -24,8 +24,7 @@ export default function ActualResponsiveCarouselSlider({
     let properties = { ...propsValues };
     if (height) properties = { ...properties, height };
     if (width) properties = { ...properties, height };
-    if (numberOfChildren >= size) setCurrentIndex(size - 1);
-    else setCurrentIndex(numberOfChildren - 1);
+    setCurrentIndex(size - 1);
 
     setPropsValues(properties);
   }, [height, width]);
